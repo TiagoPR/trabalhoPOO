@@ -189,5 +189,52 @@ public class Jogador
         this.habilidade = novaHabilidade;
     }
     
+    /**
+     * Método clone para objetos da classe Jogador.
+     */
+    public Jogador clone()
+    {
+        return new Jogador(this);
+    }
+    
+    /**
+     * Método equals para objetos da classe Jogador.
+     */
+    public boolean equals(Object o)
+    {
+        if (this == o) return true;
+        if ((o == null) || (this.getClass() != o.getClass())) return false;
+        Jogador jogador = (Jogador) o;
+        return (this.getVelocidade() == jogador.getVelocidade() && this.getResistencia() == jogador.getResistencia() && this.getDestreza() == jogador.getDestreza() && 
+                this.getImplusao() == jogador.getImplusao() && this.getJogoCabeca() == jogador.getJogoCabeca() && this.getRemate() == jogador.getRemate() && 
+                this.getCapacidadePasse() == jogador.getCapacidadePasse() && this.getHabilidade() == jogador.getHabilidade());
+    }
+    
+    /**
+     * Método que devolve a representação em String de um objeto da classe Jogador.
+     */
+    public String toString()
+    {
+        StringBuilder sb = new StringBuilder();
+        
+        sb.append("Velocidade: ");
+        sb.append(this.getVelocidade() + "\n");
+        sb.append("Resistência: ");
+        sb.append(this.getResistencia() + "\n");
+        sb.append("Destreza: ");
+        sb.append(this.getDestreza() + "\n");
+        sb.append("Implusão: ");
+        sb.append(this.getImplusao() + "\n");
+        sb.append("Jogo de cabeça: ");
+        sb.append(this.getJogoCabeca() + "\n");
+        sb.append("Remate: ");
+        sb.append(this.getRemate() + "\n");
+        sb.append("Capacidade de passe: ");
+        sb.append(this.getCapacidadePasse() + "\n");
+        sb.append("Habilidade: ");
+        sb.append(this.getHabilidade() + "\n");
+        
+        return sb.toString();
+    }
     
 }
