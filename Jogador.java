@@ -10,7 +10,7 @@ public class Jogador
     private int velocidade;
     private int resistencia;
     private int destreza;
-    private int implusao;
+    private int impulsao;
     private int jogoCabeca;
     private int remate;
     private int capacidadePasse;
@@ -24,7 +24,7 @@ public class Jogador
         this.velocidade = 0;
         this.resistencia = 0;
         this.destreza = 0;
-        this.implusao = 0;
+        this.impulsao = 0;
         this.jogoCabeca = 0;
         this.remate = 0;
         this.capacidadePasse = 0;
@@ -34,12 +34,12 @@ public class Jogador
     /**
      * Construtor parametrizado para objetos da classe Jogador.
      */
-    public Jogador(int valorVelocidade, int valorResistencia, int valorDestreza, int valorImplusao, int valorJogoCabeca, int valorRemate, int valorCapacidadePasse, int valorHabilidade)
+    public Jogador(int valorVelocidade, int valorResistencia, int valorDestreza, int valorImpulsao, int valorJogoCabeca, int valorRemate, int valorCapacidadePasse, int valorHabilidade)
     {
         this.velocidade = valorVelocidade;
         this.resistencia = valorResistencia;
         this.destreza = valorDestreza;
-        this.implusao = valorImplusao;
+        this.impulsao = valorImpulsao;
         this.jogoCabeca = valorJogoCabeca;
         this.remate = valorRemate;
         this.capacidadePasse = valorCapacidadePasse;
@@ -54,7 +54,7 @@ public class Jogador
         this.velocidade = jogador.getVelocidade();
         this.resistencia = jogador.getResistencia();
         this.destreza = jogador.getDestreza();
-        this.implusao = jogador.getImplusao();
+        this.impulsao = jogador.getImpulsao();
         this.jogoCabeca = jogador.getJogoCabeca();
         this.remate = jogador.getRemate();
         this.capacidadePasse = jogador.getCapacidadePasse();
@@ -62,7 +62,7 @@ public class Jogador
     }
     
     /**
-     * Getter para a variável velocidade de objetos da classe Jogador.
+     * Getter para a variável velocidade ("Velocidade") de objetos da classe Jogador.
      */
     public int getVelocidade()
     {
@@ -70,7 +70,7 @@ public class Jogador
     }
     
     /**
-     * Getter para a variável resistencia de objetos da classe Jogador.
+     * Getter para a variável resistencia ("Resistência") de objetos da classe Jogador.
      */
     public int getResistencia()
     {
@@ -78,7 +78,7 @@ public class Jogador
     }
     
     /**
-     * Getter para a variável destreza de objetos da classe Jogador.
+     * Getter para a variável destreza ("Destreza") de objetos da classe Jogador.
      */
     public int getDestreza()
     {
@@ -86,15 +86,15 @@ public class Jogador
     }
     
     /**
-     * Getter para a variável implusao de objetos da classe Jogador.
+     * Getter para a variável impulsao ("Impulsão") de objetos da classe Jogador.
      */
-    public int getImplusao()
+    public int getImpulsao()
     {
-        return this.implusao;
+        return this.impulsao;
     }
     
     /**
-     * Getter para a variável jogoCabeca de objetos da classe Jogador.
+     * Getter para a variável jogoCabeca ("Jogo de cabeça") de objetos da classe Jogador.
      */
     public int getJogoCabeca()
     {
@@ -102,7 +102,7 @@ public class Jogador
     }
     
     /**
-     * Getter para a variável remate de objetos da classe Jogador.
+     * Getter para a variável remate ("Remate") de objetos da classe Jogador.
      */
     public int getRemate()
     {
@@ -110,7 +110,7 @@ public class Jogador
     }
     
     /**
-     * Getter para a variável capacidadePasse de objetos da classe Jogador.
+     * Getter para a variável capacidadePasse ("Capacidade de Passe") de objetos da classe Jogador.
      */
     public int getCapacidadePasse()
     {
@@ -118,7 +118,7 @@ public class Jogador
     }
     
     /**
-     * Getter para a variável habilidade de objetos da classe Jogador.
+     * Getter para a variável habilidade ("Habilidade") de objetos da classe Jogador.
      */
     public int getHabilidade()
     {
@@ -126,7 +126,7 @@ public class Jogador
     }
     
     /**
-     * Setter para a variável velocidade de objetos da classe Jogador.
+     * Setter para a variável velocidade ("Velocidade") de objetos da classe Jogador.
      */
     public void setVelocidade(int novaVelocidade)
     {
@@ -134,7 +134,7 @@ public class Jogador
     }
     
     /**
-     * Setter para a variável resistencia de objetos da classe Jogador.
+     * Setter para a variável resistencia ("Resistência") de objetos da classe Jogador.
      */
     public void setResistencia(int novaResistencia)
     {
@@ -142,7 +142,7 @@ public class Jogador
     }
     
     /**
-     * Setter para a variável destreza de objetos da classe Jogador.
+     * Setter para a variável destreza ("Destreza") de objetos da classe Jogador.
      */
     public void setDestreza(int novaDestreza)
     {
@@ -150,15 +150,15 @@ public class Jogador
     }
     
     /**
-     * Setter para a variável implusao de objetos da classe Jogador.
+     * Setter para a variável impulsao ("Impulsão") de objetos da classe Jogador.
      */
-    public void setImplusao(int novaImplusao)
+    public void setImpulsao(int novaImpulsao)
     {
-        this.implusao = novaImplusao;
+        this.impulsao = novaImpulsao;
     }
     
     /**
-     * Setter para a variável jogoCabeca de objetos da classe Jogador.
+     * Setter para a variável jogoCabeca ("Jogo de cabeça") de objetos da classe Jogador.
      */
     public void setJogoCabeca(int novoJogoCabeca)
     {
@@ -166,7 +166,7 @@ public class Jogador
     }
     
     /**
-     * Setter para a variável remate de objetos da classe Jogador.
+     * Setter para a variável remate ("Remate") de objetos da classe Jogador.
      */
     public void setRemate(int novoRemate)
     {
@@ -174,7 +174,7 @@ public class Jogador
     }
     
     /**
-     * Setter para a variável capacidadePasse de objetos da classe Jogador.
+     * Setter para a variável capacidadePasse ("Capacidade de Passe") de objetos da classe Jogador.
      */
     public void setCapacidadePasse(int novaCapacidadePasse)
     {
@@ -182,7 +182,7 @@ public class Jogador
     }
     
     /**
-     * Setter para a variável habilidade de objetos da classe Jogador.
+     * Setter para a variável habilidade ("Habilidade") de objetos da classe Jogador.
      */
     public void setHabilidade(int novaHabilidade)
     {
@@ -206,7 +206,7 @@ public class Jogador
         if ((o == null) || (this.getClass() != o.getClass())) return false;
         Jogador jogador = (Jogador) o;
         return (this.getVelocidade() == jogador.getVelocidade() && this.getResistencia() == jogador.getResistencia() && this.getDestreza() == jogador.getDestreza() && 
-                this.getImplusao() == jogador.getImplusao() && this.getJogoCabeca() == jogador.getJogoCabeca() && this.getRemate() == jogador.getRemate() && 
+                this.getImpulsao() == jogador.getImpulsao() && this.getJogoCabeca() == jogador.getJogoCabeca() && this.getRemate() == jogador.getRemate() && 
                 this.getCapacidadePasse() == jogador.getCapacidadePasse() && this.getHabilidade() == jogador.getHabilidade());
     }
     
@@ -223,8 +223,8 @@ public class Jogador
         sb.append(this.getResistencia() + "\n");
         sb.append("Destreza: ");
         sb.append(this.getDestreza() + "\n");
-        sb.append("Implusão: ");
-        sb.append(this.getImplusao() + "\n");
+        sb.append("Impulsão: ");
+        sb.append(this.getImpulsao() + "\n");
         sb.append("Jogo de cabeça: ");
         sb.append(this.getJogoCabeca() + "\n");
         sb.append("Remate: ");
