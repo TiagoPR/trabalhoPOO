@@ -1,8 +1,8 @@
 
-public class GuardaRedes extends Jogador{
+public class GuardaRedes extends Jogador
+{
     private int elasticidade;
-
-
+    
     /**
      * Construtor por omissão para objetos da classe GuardaRedes.
      */
@@ -16,25 +16,26 @@ public class GuardaRedes extends Jogador{
      * Construtor parametrizado para objetos da classe GuardaRedes.
      */
     public GuardaRedes(int valorVelocidade, int valorResistencia, int valorDestreza, int valorImpulsao, int valorJogoCabeca, int valorRemate, int valorCapacidadePasse,
-                       int valorHabilidade, int valorElasticidade)
+                       int valorElasticidade)
     {
-        super(valorVelocidade, valorResistencia, valorDestreza, valorImpulsao, valorJogoCabeca, valorRemate, valorCapacidadePasse, valorHabilidade);
+        super(valorVelocidade, valorResistencia, valorDestreza, valorImpulsao, valorJogoCabeca, valorRemate, valorCapacidadePasse);
         this.elasticidade = valorElasticidade;
     }
     
     /**
      * Construtor de cópia para objetos da classe GuardaRedes.
      */
-    public GuardaRedes(GuardaRedes gk)
+    public GuardaRedes(GuardaRedes gr)
     {
-        super(gk);
-        this.elasticidade = gk.getElasticidade();
+        super(gr);
+        this.elasticidade = gr.getElasticidade();
     }
 
     /**
      * Getter para a variável elasticidade ("Elasticidade") de objetos da classe GuardaRedes.
      */
-    public int getElasticidade() {
+    public int getElasticidade()
+    {
         return this.elasticidade;
     }
 
@@ -62,9 +63,9 @@ public class GuardaRedes extends Jogador{
         if (this == o) return true;
         if (o == null || this.getClass() != o.getClass()) return false;
 
-        GuardaRedes gk = (GuardaRedes) o;
+        GuardaRedes gr = (GuardaRedes) o;
 
-        return super.equals(gk) && this.elasticidade == gk.getElasticidade();
+        return super.equals(gr) && this.elasticidade == gr.getElasticidade();
     }
     
     /**

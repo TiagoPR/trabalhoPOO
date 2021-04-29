@@ -100,7 +100,7 @@ public abstract class Jogador
     }
     
     /**
-     * Getter para a variável capacidadePasse ("Capacidade de Passe") de objetos do tipo Jogador.
+     * Getter para a variável capacidadePasse ("Capacidade de passe") de objetos do tipo Jogador.
      */
     public int getCapacidadePasse()
     {
@@ -156,7 +156,7 @@ public abstract class Jogador
     }
     
     /**
-     * Setter para a variável capacidadePasse ("Capacidade de Passe") de objetos do tipo Jogador.
+     * Setter para a variável capacidadePasse ("Capacidade de passe") de objetos do tipo Jogador.
      */
     public void setCapacidadePasse(int novaCapacidadePasse)
     {
