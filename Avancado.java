@@ -1,7 +1,7 @@
 
 public class Avancado extends Jogador
 {
-    private int z;
+    private int desmarcacao;
     
     /**
      * Construtor por omissão para objetos da classe Avancado.
@@ -9,16 +9,16 @@ public class Avancado extends Jogador
     public Avancado()
     {
         super();
-        this.z = 0;
+        this.desmarcacao = 0;
     }
     
     /**
      * Construtor parametrizado para objetos da classe Avancado.
      */
-    public Avancado(int valorVelocidade, int valorResistencia, int valorDestreza, int valorImpulsao, int valorJogoCabeca, int valorRemate, int valorCapacidadePasse, int valorz)
+    public Avancado(int valorVelocidade, int valorResistencia, int valorDestreza, int valorImpulsao, int valorJogoCabeca, int valorRemate, int valorCapacidadePasse, int valorDesmarcacao)
     {
         super(valorVelocidade, valorResistencia, valorDestreza, valorImpulsao, valorJogoCabeca, valorRemate, valorCapacidadePasse);
-        this.z = valorz;
+        this.desmarcacao = valorDesmarcacao;
     }
     
     /**
@@ -27,23 +27,23 @@ public class Avancado extends Jogador
     public Avancado(Avancado av)
     {
         super(av);
-        this.z = av.getz();
+        this.desmarcacao = av.getDesmarcacao();
     }
 
     /**
-     * Getter para a variável  ("") de objetos da classe Avancado.
+     * Getter para a variável desmarcacao ("Desmarcação") de objetos da classe Avancado.
      */
-    public int getz()
+    public int getDesmarcacao()
     {
-        return this.z;
+        return this.desmarcacao;
     }
     
     /**
-     * Setter para a variável  ("") de objetos da classe Avancado.
+     * Setter para a variável desmarcacao ("Desmarcação") de objetos da classe Avancado.
      */
-    public void setz(int novaz)
+    public void setDesmarcacao(int novaDesmarcacao)
     {
-        this.z = novaz;
+        this.desmarcacao = novaDesmarcacao;
     }
     
     /**
@@ -64,7 +64,7 @@ public class Avancado extends Jogador
 
         Avancado av = (Avancado) o;
 
-        return super.equals(av) && this.z == av.getz();
+        return super.equals(av) && this.desmarcacao == av.getDesmarcacao();
     }
     
     /**
@@ -75,8 +75,8 @@ public class Avancado extends Jogador
         StringBuilder sb = new StringBuilder();
 
         sb.append(super.toString());
-        sb.append("z: ");
-        sb.append(this.getz() + "\n");
+        sb.append("Desmarcação: ");
+        sb.append(this.getDesmarcacao() + "\n");
 
         return sb.toString();
     }

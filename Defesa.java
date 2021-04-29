@@ -1,7 +1,7 @@
 
 public class Defesa extends Jogador
 {
-    private int x;
+    private int marcacao;
     
     /**
      * Construtor por omissão para objetos da classe Defesa.
@@ -9,16 +9,16 @@ public class Defesa extends Jogador
     public Defesa()
     {
         super();
-        this.x = 0;
+        this.marcacao = 0;
     }
     
     /**
      * Construtor parametrizado para objetos da classe Defesa.
      */
-    public Defesa(int valorVelocidade, int valorResistencia, int valorDestreza, int valorImpulsao, int valorJogoCabeca, int valorRemate, int valorCapacidadePasse, int valorx)
+    public Defesa(int valorVelocidade, int valorResistencia, int valorDestreza, int valorImpulsao, int valorJogoCabeca, int valorRemate, int valorCapacidadePasse, int valorMarcacao)
     {
         super(valorVelocidade, valorResistencia, valorDestreza, valorImpulsao, valorJogoCabeca, valorRemate, valorCapacidadePasse);
-        this.x = valorx;
+        this.marcacao = valorMarcacao;
     }
     
     /**
@@ -27,23 +27,23 @@ public class Defesa extends Jogador
     public Defesa(Defesa df)
     {
         super(df);
-        this.x = df.getx();
+        this.marcacao = df.getMarcacao();
     }
 
     /**
-     * Getter para a variável  ("") de objetos da classe Defesa.
+     * Getter para a variável marcacao ("Marcação") de objetos da classe Defesa.
      */
-    public int getx()
+    public int getMarcacao()
     {
-        return this.x;
+        return this.marcacao;
     }
 
     /**
-     * Setter para a variável  ("") de objetos da classe Defesa.
+     * Setter para a variável marcacao ("Marcação") de objetos da classe Defesa.
      */
-    public void setx(int novax)
+    public void setMarcacao(int novaMarcacao)
     {
-        this.x = novax;
+        this.marcacao = novaMarcacao;
     }
     
     /**
@@ -64,7 +64,7 @@ public class Defesa extends Jogador
 
         Defesa df = (Defesa) o;
 
-        return super.equals(df) && this.x == df.getx();
+        return super.equals(df) && this.marcacao == df.getMarcacao();
     }
     
     /**
@@ -75,8 +75,8 @@ public class Defesa extends Jogador
         StringBuilder sb = new StringBuilder();
 
         sb.append(super.toString());
-        sb.append("x: ");
-        sb.append(this.getx() + "\n");
+        sb.append("Marcação: ");
+        sb.append(this.getMarcacao() + "\n");
 
         return sb.toString();
     }
