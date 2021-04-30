@@ -27,13 +27,13 @@ public class Defesa extends Jogador
     public Defesa(Defesa df)
     {
         super(df);
-        this.x = df.getx();
+        this.x = df.getX();
     }
 
     /**
      * Getter para a variável  ("") de objetos da classe Defesa.
      */
-    public int getx()
+    public int getX()
     {
         return this.x;
     }
@@ -44,6 +44,15 @@ public class Defesa extends Jogador
     public void setx(int novax)
     {
         this.x = novax;
+    }
+
+    public int calculaHabilidade()
+    {
+        double valor =  this.getX() * 0.30 + this.getCapacidadePasse() * 0.10
+                + this.getDestreza() * 0.10 + this.getImpulsao() * 0.10 + this.getRemate() * 0.10
+                + this.getJogoCabeca() * 0.10 + this.getResistencia() * 0.10 + this.getVelocidade() * 0.10;
+
+        return (int) valor;
     }
     
     /**
@@ -64,7 +73,7 @@ public class Defesa extends Jogador
 
         Defesa df = (Defesa) o;
 
-        return super.equals(df) && this.x == df.getx();
+        return super.equals(df) && this.x == df.getX();
     }
     
     /**
@@ -76,7 +85,7 @@ public class Defesa extends Jogador
 
         sb.append(super.toString());
         sb.append("x: ");
-        sb.append(this.getx() + "\n");
+        sb.append(this.getX() + "\n");
 
         return sb.toString();
     }

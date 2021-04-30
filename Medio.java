@@ -46,6 +46,15 @@ public class Medio extends Jogador
     {
         this.recuperacaoBola = novaRecuperacaoBola;
     }
+
+    public int calculaHabilidade()
+    {
+        double valor =  this.getRecuperacaoBola() * 0.30 + this.getCapacidadePasse() * 0.10
+                + this.getDestreza() * 0.10 + this.getImpulsao() * 0.10 + this.getRemate() * 0.10
+                + this.getJogoCabeca() * 0.10 + this.getResistencia() * 0.10 + this.getVelocidade() * 0.10;
+
+        return (int) valor;
+    }
     
     /**
      * Método clone para objetos da classe Medio.

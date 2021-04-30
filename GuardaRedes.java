@@ -81,5 +81,14 @@ public class GuardaRedes extends Jogador
 
         return sb.toString();
     }
+
+    public int calculaHabilidade()
+    {
+        double valor =  this.getElasticidade() * 0.30 + this.getCapacidadePasse() * 0.10
+                + this.getDestreza() * 0.10 + this.getImpulsao() * 0.10 + this.getRemate() * 0.10
+                + this.getJogoCabeca() * 0.10 + this.getResistencia() * 0.10 + this.getVelocidade() * 0.10;
+
+        return (int) valor;
+    }
     
 }
