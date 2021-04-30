@@ -1,54 +1,54 @@
 
 public class Defesa extends Jogador
 {
-    private int x;
-    
+    private int marcacao;
+
     /**
      * Construtor por omissão para objetos da classe Defesa.
      */
     public Defesa()
     {
         super();
-        this.x = 0;
+        this.marcacao = 0;
     }
-    
+
     /**
      * Construtor parametrizado para objetos da classe Defesa.
      */
-    public Defesa(int valorVelocidade, int valorResistencia, int valorDestreza, int valorImpulsao, int valorJogoCabeca, int valorRemate, int valorCapacidadePasse, int valorx)
+    public Defesa(int valorVelocidade, int valorResistencia, int valorDestreza, int valorImpulsao, int valorJogoCabeca, int valorRemate, int valorCapacidadePasse, int valorMarcacao)
     {
         super(valorVelocidade, valorResistencia, valorDestreza, valorImpulsao, valorJogoCabeca, valorRemate, valorCapacidadePasse);
-        this.x = valorx;
+        this.marcacao = valorMarcacao;
     }
-    
+
     /**
      * Construtor de cópia para objetos da classe Defesa.
      */
     public Defesa(Defesa df)
     {
         super(df);
-        this.x = df.getX();
+        this.marcacao = df.getMarcacao();
     }
 
     /**
-     * Getter para a variável  ("") de objetos da classe Defesa.
+     * Getter para a variável marcacao ("Marcação") de objetos da classe Defesa.
      */
-    public int getX()
+    public int getMarcacao()
     {
-        return this.x;
+        return this.marcacao;
     }
 
     /**
-     * Setter para a variável  ("") de objetos da classe Defesa.
+     * Setter para a variável marcacao ("Marcação") de objetos da classe Defesa.
      */
-    public void setx(int novax)
+    public void setMarcacao(int novaMarcacao)
     {
-        this.x = novax;
+        this.marcacao = novaMarcacao;
     }
 
     public int calculaHabilidade()
     {
-        double valor =  this.getX() * 0.30 + this.getCapacidadePasse() * 0.10
+        double valor =  this.getMarcacao() * 0.30 + this.getCapacidadePasse() * 0.10
                 + this.getDestreza() * 0.10 + this.getImpulsao() * 0.10 + this.getRemate() * 0.10
                 + this.getJogoCabeca() * 0.10 + this.getResistencia() * 0.10 + this.getVelocidade() * 0.10;
 
@@ -73,7 +73,7 @@ public class Defesa extends Jogador
 
         Defesa df = (Defesa) o;
 
-        return super.equals(df) && this.x == df.getX();
+        return super.equals(df) && this.marcacao == df.getMarcacao();
     }
     
     /**
@@ -84,8 +84,8 @@ public class Defesa extends Jogador
         StringBuilder sb = new StringBuilder();
 
         sb.append(super.toString());
-        sb.append("x: ");
-        sb.append(this.getX() + "\n");
+        sb.append("Marcação: ");
+        sb.append(this.getMarcacao() + "\n");
 
         return sb.toString();
     }

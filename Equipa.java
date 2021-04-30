@@ -2,16 +2,8 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.stream.Collectors;
 
-/**
- * Primeira versão da class Equipa (suscetível a alteracoes)
- *
- * @author Grupo POO
- * @version 1.0 (Apenas com nome e habilidade da equipa, ficando a faltar o array dos jogadores,
- *               podendo ficar em arrays separados, para os guarda-redes, os defesas, os médios e os avancados)
- */
 public class Equipa
 {
-    // Variaveis de instancia
     private String nome;
     private int habilidade;
     private Map<Integer,Jogador> plantel;
@@ -57,6 +49,7 @@ public class Equipa
     {
         return this.nome;
     }
+    
     /**
      * Getter para a variável habilidade de objetos da classe Equipa
      */
@@ -96,6 +89,7 @@ public class Equipa
     {
         this.nome = novonome;
     }
+    
     /**
      * Setter para a variável habilidade de objetos da classe Equipa
      */

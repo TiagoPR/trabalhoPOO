@@ -1,6 +1,5 @@
 #BlueJ class context
 comment0.target=Equipa
-comment0.text=\r\n\ Primeira\ vers\u00E3o\ da\ class\ Equipa\ (suscet\u00EDvel\ a\ alteracoes)\r\n\r\n\ @author\ Grupo\ POO\r\n\ @version\ 1.0\ (Apenas\ com\ nome\ e\ habilidade\ da\ equipa,\ ficando\ a\ faltar\ o\ array\ dos\ jogadores,\r\n\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ podendo\ ficar\ em\ arrays\ separados,\ para\ os\ guarda-redes,\ os\ defesas,\ os\ m\u00E9dios\ e\ os\ avancados)\r\n
 comment1.params=
 comment1.target=Equipa()
 comment1.text=\r\n\ Construtor\ por\ omiss\u00E3o\ para\ objetos\ da\ classe\ Equipa\r\n
