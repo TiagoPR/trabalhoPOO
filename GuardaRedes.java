@@ -48,6 +48,18 @@ public class GuardaRedes extends Jogador
     }
     
     /**
+     * Método que calcula o valor correspondente à habilidade ("Habilidade") de objetos da classe GuardaRedes, tendo em conta as especificidades desta.
+     */
+    public int calculaHabilidade()
+    {
+        double valor = this.getElasticidade() * 0.30 + this.getCapacidadePasse() * 0.10
+                + this.getDestreza() * 0.10 + this.getImpulsao() * 0.10 + this.getRemate() * 0.10
+                + this.getJogoCabeca() * 0.10 + this.getResistencia() * 0.10 + this.getVelocidade() * 0.10;
+
+        return (int) valor;
+    }
+    
+    /**
      * Método clone para objetos da classe GuardaRedes.
      */
     public GuardaRedes clone()
@@ -80,15 +92,6 @@ public class GuardaRedes extends Jogador
         sb.append(this.getElasticidade() + "\n");
 
         return sb.toString();
-    }
-
-    public int calculaHabilidade()
-    {
-        double valor =  this.getElasticidade() * 0.30 + this.getCapacidadePasse() * 0.10
-                + this.getDestreza() * 0.10 + this.getImpulsao() * 0.10 + this.getRemate() * 0.10
-                + this.getJogoCabeca() * 0.10 + this.getResistencia() * 0.10 + this.getVelocidade() * 0.10;
-
-        return (int) valor;
     }
     
 }

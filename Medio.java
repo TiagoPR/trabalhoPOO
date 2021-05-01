@@ -47,9 +47,12 @@ public class Medio extends Jogador
         this.recuperacaoBola = novaRecuperacaoBola;
     }
 
+    /**
+     * Método que calcula o valor correspondente à habilidade ("Habilidade") de objetos da classe Medio, tendo em conta as especificidades desta.
+     */
     public int calculaHabilidade()
     {
-        double valor =  this.getRecuperacaoBola() * 0.30 + this.getCapacidadePasse() * 0.10
+        double valor = this.getRecuperacaoBola() * 0.30 + this.getCapacidadePasse() * 0.10
                 + this.getDestreza() * 0.10 + this.getImpulsao() * 0.10 + this.getRemate() * 0.10
                 + this.getJogoCabeca() * 0.10 + this.getResistencia() * 0.10 + this.getVelocidade() * 0.10;
 

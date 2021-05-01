@@ -46,9 +46,12 @@ public class Lateral extends Jogador
         this.cruzamento = novoCruzamento;
     }
 
+    /**
+     * Método que calcula o valor correspondente à habilidade ("Habilidade") de objetos da classe Lateral, tendo em conta as especificidades desta.
+     */
     public int calculaHabilidade()
     {
-        double valor =  this.getCruzamento() * 0.30 + this.getCapacidadePasse() * 0.10
+        double valor = this.getCruzamento() * 0.30 + this.getCapacidadePasse() * 0.10
                 + this.getDestreza() * 0.10 + this.getImpulsao() * 0.10 + this.getRemate() * 0.10
                 + this.getJogoCabeca() * 0.10 + this.getResistencia() * 0.10 + this.getVelocidade() * 0.10;
 
