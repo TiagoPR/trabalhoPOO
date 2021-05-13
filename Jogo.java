@@ -82,17 +82,18 @@ public class Jogo
         
         Jogo jogo = (Jogo) o;
         
-        return (this.equipa1.equals(equipa2) && this.casa == jogo.getCasa() && this.visitante == jogo.getVisitante());
+        return (this.getEquipa1().equals(jogo.getEquipa1()) && this.getEquipa2().equals(jogo.getEquipa2()) &&
+                this.getCasa() == jogo.getCasa() && this.getVisitante() == jogo.getVisitante());
     }
     
     public String toString()
     {
         StringBuilder sb = new StringBuilder();
         
-        sb.append(this.equipa1.getNome() + "\t");
+        sb.append(this.getEquipa1().getNome() + "\t");
         sb.append(this.getCasa() + " - ");
         sb.append(this.getVisitante() + "\t");
-        sb.append(this.equipa2.getNome() + "\n");
+        sb.append(this.getEquipa2().getNome() + "\n");
         
         return sb.toString();
     }
