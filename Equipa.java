@@ -13,8 +13,8 @@ public class Equipa
     public Equipa()
     {
         this.nome = "N/A";
-        plantel = new HashMap<>();
-        banco = new HashMap<>();
+        this.plantel = new HashMap<>();
+        this.banco = new HashMap<>();
     }
     
     /**
@@ -23,8 +23,8 @@ public class Equipa
     public Equipa(String nomeEquipa, Map<Integer,Jogador> nPlantel, Map<Integer,Jogador> nBanco)
     {
         this.nome = nomeEquipa;
-        setPlantel(nPlantel);
-        setBanco(nBanco);
+        this.setPlantel(nPlantel);
+        this.setBanco(nBanco);
     }
     
     /**
@@ -167,25 +167,5 @@ public class Equipa
         
         return sb.toString();
     }
-
-    /**
-     *  Métodos adicionais
-     */
-
-    public void substituição(int principal, int substituto)
-    {
-        if (plantel.containsKey(principal) && banco.containsKey(substituto))
-        {
-            Jogador prin = plantel.get(principal);
-            Jogador subs = banco.get(substituto);
-
-            plantel.remove(principal);
-            banco.put(principal,prin);
-
-            plantel.put(substituto, subs);
-            banco.remove(substituto);
-
-        }
-    }
-
+    
 }

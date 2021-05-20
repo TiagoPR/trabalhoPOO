@@ -1,9 +1,9 @@
 #BlueJ package file
-dependency1.from=Equipa
-dependency1.to=Jogador
+dependency1.from=Jogo
+dependency1.to=Equipa
 dependency1.type=UsesDependency
-dependency2.from=Jogo
-dependency2.to=Equipa
+dependency2.from=Equipa
+dependency2.to=Jogador
 dependency2.type=UsesDependency
 editor.fx.0.height=838
 editor.fx.0.width=1550
