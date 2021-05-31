@@ -172,7 +172,7 @@ public class Equipa
      * Método que permite efetuar uma substituição entre dois jogadores (objetos de tipo Jogador), sendo tratado por principal (a nível de argumento do método) o jogador que 
      * está no plantel e que passa a estar no banco, e sendo tratado por substituto (a nível de argumento do método) o jogador que está no banco e que passa a estar no plantel.
      */
-    public void substituição(int principal, int substituto)
+    public void substituicão(int principal, int substituto)
     {
         if (plantel.containsKey(principal) && banco.containsKey(substituto))
         {
