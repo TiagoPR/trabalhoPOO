@@ -122,12 +122,7 @@ public class Equipa
             valor += j.calculaHabilidade();
         }
         
-        for (Jogador j : this.getBanco().values())
-        {
-            valor += j.calculaHabilidade();
-        }
-        
-        return valor;
+        return valor/11; // habilidade da equipa de 0 a 100
     }
     
     /**

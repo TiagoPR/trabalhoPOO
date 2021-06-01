@@ -1,3 +1,4 @@
+import java.io.*;
 
 public class Jogo
 {
@@ -5,6 +6,8 @@ public class Jogo
     private Equipa equipa2;
     private int casa;
     private int visitante;
+    private boolean comecou;
+    private boolean intervalo;
 
     public Jogo()
     {
@@ -12,14 +15,28 @@ public class Jogo
         this.equipa2 = new Equipa();
         this.casa = 0;
         this.visitante = 0;
+        this.comecou = false;
+        this.intervalo = false;
     }
 
-    public Jogo(Equipa umaEquipa1, Equipa umaEquipa2, int valorCasa, int valorVisitante)
+    public Jogo(Equipa umaEquipa1, Equipa umaEquipa2, int valorCasa, int valorVisitante, boolean comecou, boolean intervalo)
     {
         this.equipa1 = umaEquipa1.clone();
         this.equipa2 = umaEquipa2.clone();
         this.casa = valorCasa;
         this.visitante = valorVisitante;
+        this.comecou = comecou;
+        this.intervalo = intervalo;
+    }
+
+    public Jogo(Equipa umaEquipa1, Equipa umaEquipa2)
+    {
+        this.equipa1 = umaEquipa1.clone();
+        this.equipa2 = umaEquipa2.clone();
+        this.casa = 0;
+        this.visitante = 0;
+        this.comecou = false;
+        this.intervalo = false;
     }
     
     public Jogo(Jogo umJogo)
@@ -28,6 +45,8 @@ public class Jogo
         this.equipa2 = umJogo.getEquipa2();
         this.casa = umJogo.getCasa();
         this.visitante = umJogo.getVisitante();
+        this.comecou = umJogo.getEstado();
+        this.intervalo = umJogo.getIntervalo();
     }
     
     public Equipa getEquipa1()
@@ -49,6 +68,16 @@ public class Jogo
     {
         return this.visitante;
     }
+
+    public boolean getEstado()
+    {
+        return this.comecou;
+    }
+
+    public boolean getIntervalo()
+    {
+        return this.intervalo;
+    }
     
     public void setEquipa1(Equipa umaEquipa1)
     {
@@ -58,16 +87,6 @@ public class Jogo
     public void setEquipa2(Equipa umaEquipa2)
     {
         this.equipa2 = umaEquipa2.clone();
-    }
-    
-    public void goloCasa()
-    {
-        this.casa += 1;
-    }
-    
-    public void goloVisitante()
-    {
-        this.visitante += 1;
     }
     
     public Jogo clone()
@@ -96,6 +115,54 @@ public class Jogo
         sb.append(this.getEquipa2().getNome() + "\n");
         
         return sb.toString();
+    }
+
+    /*
+            Métodos adicionais
+     */
+
+    public void goloCasa()
+    {
+        if (comecou && !intervalo) this.casa += 1;
+    }
+
+    public void goloVisitante()
+    {
+        if (comecou && !intervalo) this.visitante += 1;
+    }
+
+    public void tentativaGolo(Equipa e)
+    {
+        // ainda por implementar
+    }
+
+    public void toCSV(String fileName) throws FileNotFoundException {
+        PrintWriter fich = new PrintWriter(fileName);
+
+        fich.println( equipa1.toString() + "\n");
+        fich.println( equipa2.toString());
+
+        fich.flush();
+        fich.close();
+    }
+
+    public void guardaEstado(String fileName) throws IOException
+    {
+        FileOutputStream fos = new FileOutputStream(fileName);
+        ObjectOutputStream oos = new ObjectOutputStream(fos);
+        oos.writeObject(this);
+
+        oos.flush();
+        oos.close();
+    }
+
+    public static Jogo carregaEstado(String fileName) throws IOException, ClassNotFoundException {
+        FileInputStream fis = new FileInputStream(fileName);
+        ObjectInputStream ois = new ObjectInputStream(fis);
+        Jogo j = (Jogo) ois.readObject();
+
+        ois.close();
+        return j;
     }
     
 }
