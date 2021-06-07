@@ -108,9 +108,6 @@ public class Main {
 
         Jogo j = new Jogo(e1,e2);
 
-        double foo = Math.random() * 100;
-        System.out.println(foo);
-
         try {
             j.toCSV("equipas.csv");
             System.out.println("Ficheiro CSV criado com succeso!");
