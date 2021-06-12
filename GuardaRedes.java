@@ -15,10 +15,10 @@ public class GuardaRedes extends Jogador
     /**
      * Construtor parametrizado para objetos da classe GuardaRedes.
      */
-    public GuardaRedes(int valorVelocidade, int valorResistencia, int valorDestreza, int valorImpulsao, int valorJogoCabeca, int valorRemate, int valorCapacidadePasse,
+    public GuardaRedes(String umNome, int valorVelocidade, int valorResistencia, int valorDestreza, int valorImpulsao, int valorJogoCabeca, int valorRemate, int valorCapacidadePasse,
                        int valorElasticidade)
     {
-        super(valorVelocidade, valorResistencia, valorDestreza, valorImpulsao, valorJogoCabeca, valorRemate, valorCapacidadePasse);
+        super(umNome, valorVelocidade, valorResistencia, valorDestreza, valorImpulsao, valorJogoCabeca, valorRemate, valorCapacidadePasse);
         this.elasticidade = valorElasticidade;
     }
     
@@ -53,8 +53,8 @@ public class GuardaRedes extends Jogador
     public int calculaHabilidade()
     {
         double valor = this.getElasticidade() * 0.30 + this.getCapacidadePasse() * 0.10
-                + this.getDestreza() * 0.10 + this.getImpulsao() * 0.10 + this.getRemate() * 0.10
-                + this.getJogoCabeca() * 0.10 + this.getResistencia() * 0.10 + this.getVelocidade() * 0.10;
+                + this.getDestreza() * 0.10 + this.getImpulsao() * 0.10 + this.getRemate() * 0.15
+                + this.getJogoCabeca() * 0.10 + this.getResistencia() * 0.10 + this.getVelocidade() * 0.05;
 
         return (int) valor;
     }

@@ -1,0 +1,10 @@
+#BlueJ class context
+comment0.target=Controller
+comment0.text=\r\n\ Controlador\ do\ modelo\ MVC\r\n
+comment1.params=j
+comment1.target=Controller(Jogo)
+comment2.params=filename
+comment2.target=void\ guardaEstado(java.lang.String)
+comment3.params=filename
+comment3.target=void\ carregaEstado(java.lang.String)
+numComments=4
