@@ -136,6 +136,11 @@ public class Jogo
         // ainda por implementar
     }
 
+    public void correrJogo()
+    {
+
+    }
+
     public void toCSV(String fileName) throws FileNotFoundException {
         PrintWriter fich = new PrintWriter(fileName);
 
