@@ -12,6 +12,11 @@ public class Controller {
         this.j = j;
     }
 
+    public void run()
+    {
+        j.correrJogo();
+    }
+
     public void guardaEstado(String filename) throws IOException
     {
         j.guardaEstado(filename);

@@ -131,14 +131,85 @@ public class Jogo
         if (comecou && !intervalo) this.visitante += 1;
     }
 
-    public void tentativaGolo(Equipa e)
+    public void tentativaGoloCasa()
     {
-        // ainda por implementar
+        double probabilidade = equipa1.calculaHabilidade()/2.0;
+
+        int getRandomValue = (int) (Math.random()*(100-1)) + 1; // (int) (Math.random()*(max-min)) + min;
+
+        if (probabilidade + getRandomValue <= 30)
+        {
+            System.out.println("Falhou a chance!");
+        }
+
+        if ((probabilidade + getRandomValue <= 60) && (probabilidade + getRandomValue > 30))
+        {
+            System.out.println("Ao poste!!");
+        }
+
+        if ((probabilidade + getRandomValue > 60))
+        {
+            System.out.println("Golo!!");
+            goloCasa();
+        }
+
+    }
+
+    public void tentativaGoloVisitante()
+    {
+        double probabilidade = equipa2.calculaHabilidade()/2.0;
+
+        int getRandomValue = (int) (Math.random()*(100-1)) + 1; // (int) (Math.random()*(max-min)) + min;
+
+        if (probabilidade + getRandomValue <= 30)
+        {
+            System.out.println("Falhou a chance!");
+        }
+
+        if ((probabilidade + getRandomValue <= 60) && (probabilidade + getRandomValue > 30))
+        {
+            System.out.println("Ao poste!!");
+        }
+
+        if ((probabilidade + getRandomValue > 60))
+        {
+            System.out.println("Golo!!");
+            goloVisitante();
+        }
+
+    }
+
+    public void mostrarResultado()
+    {
+        System.out.println("Casa:" + casa + " -- " + "Visitante:" + visitante);
     }
 
     public void correrJogo()
     {
+        long tempo = System.currentTimeMillis();
 
+
+        while((tempo = System.currentTimeMillis() - tempo) < 5000)
+        {
+            tentativaGoloCasa();
+        }
+
+        while((tempo = System.currentTimeMillis() - tempo) < 50000)
+        {
+            tentativaGoloVisitante();
+        }
+
+        while((tempo = System.currentTimeMillis() - tempo) < 50000)
+        {
+            tentativaGoloVisitante();
+        }
+
+        while((tempo = System.currentTimeMillis() - tempo) < 5000)
+        {
+            tentativaGoloCasa();
+        }
+
+        mostrarResultado();
     }
 
     public void toCSV(String fileName) throws FileNotFoundException {
