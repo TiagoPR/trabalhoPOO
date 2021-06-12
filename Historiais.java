@@ -2,6 +2,7 @@ import java.util.Map;
 import java.util.HashMap;
 import java.util.List;
 import java.util.ArrayList;
+import java.util.stream.Collectors;
 
 public class Historiais
 {
@@ -22,24 +23,42 @@ public class Historiais
         this.historiais = hists.getHistoriais();
     }
     
-    public Historiais getHistoriais()
+    public Map<Jogador,List<Equipa>> getHistoriais()
     {
         Map<Jogador,List<Equipa>> h = new HashMap<>();
         
         for (Map.Entry<Jogador,List<Equipa>> e : this.historiais.entrySet())
         {
             List<Equipa> historial = new ArrayList<>();
+            
             for (Equipa team : e.getValue())
             {
-                historialteam.clone();
+                historial.add(team.clone());
             }
-            ret.put(e.getKey(), e.getValue().clone());
+            
+            h.put(e.getKey().clone(), historial);
         }
+        
+        return h;
     }
     
     public void setHistoriais(Map<Jogador,List<Equipa>> novosHistoriais)
     {
+        Map<Jogador,List<Equipa>> h = new HashMap<>();
         
+        for (Map.Entry<Jogador,List<Equipa>> e : novosHistoriais.entrySet())
+        {
+            List<Equipa> historial = new ArrayList<>();
+            
+            for (Equipa team : e.getValue())
+            {
+                historial.add(team.clone());
+            }
+            
+            h.put(e.getKey().clone(), historial);
+        }
+        
+        this.historiais = h;
     }
     
     public Historiais clone()
@@ -52,37 +71,24 @@ public class Historiais
         if (this == o) return true;
         if ((o == null) || (this.getClass() != o.getClass())) return false;
         
-        Transferencia trans = (Transferencia) o;
+        Historiais hists = (Historiais) o;
         
-        return this.getVendedora().equals(trans.getVendedora()) && this.getCompradora().equals(trans.getCompradora());
+        return this.getHistoriais().equals(hists.getHistoriais());
     }
     
     public String toString()
     {
         StringBuilder sb = new StringBuilder();
         
-        sb.append();
-        sb.append();
-        sb.append();
-        sb.append();
-        sb.append();
-        sb.append();
+        for (Map.Entry<Jogador,List<Equipa>> e : this.getHistoriais().entrySet())
+        {
+            sb.append("Jogador: ");
+            sb.append(e.getKey().toString());
+            sb.append("Historial de equipas: ");
+            sb.append(e.getValue().stream().map(team -> team.getNome()).collect(Collectors.toList()).toString());            
+        }
         
         return sb.toString();
     }
     
-    public void transferencia(Equipa aVendedora, Equipa aCompradora)
-    {
-        if (aVendedora.getPlantel().containsValue(this))
-        {
-            aCompradora.banco.put(this.clone());
-            
-        }
-    }
-
-
-
-
-
-
 }

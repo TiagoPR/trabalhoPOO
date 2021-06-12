@@ -1,0 +1,19 @@
+#BlueJ class context
+comment0.target=Historiais
+comment1.params=
+comment1.target=Historiais()
+comment2.params=unsHistoriais
+comment2.target=Historiais(java.util.Map)
+comment3.params=hists
+comment3.target=Historiais(Historiais)
+comment4.params=
+comment4.target=java.util.Map\ getHistoriais()
+comment5.params=novosHistoriais
+comment5.target=void\ setHistoriais(java.util.Map)
+comment6.params=
+comment6.target=Historiais\ clone()
+comment7.params=o
+comment7.target=boolean\ equals(java.lang.Object)
+comment8.params=
+comment8.target=java.lang.String\ toString()
+numComments=9

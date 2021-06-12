@@ -236,4 +236,19 @@ public abstract class Jogador
         return sb.toString();
     }
     
+    /**
+     * Método que permite remover um objeto do tipo Jogador do plantel ou do banco de um objeto da classe Equipa (o argumento de nome aVendedora) e adicionar ao banco 
+     * de um outro objeto da classe Equipa (o argumento de nome aCompradora).
+     */
+    public void transferencia(Equipa aVendedora, Equipa aCompradora, int numero)
+    {
+        if (aVendedora.getPlantel().containsValue(this))
+        {
+            aCompradora.insereNoBanco(numero, this.clone());
+        }
+        else if (aVendedora.getBanco().containsValue(this))
+        {
+            aCompradora.insereNoBanco(numero, this.clone());
+        }
+    }
 }

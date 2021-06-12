@@ -92,7 +92,7 @@ public class Equipa
 
         for (Map.Entry<Integer,Jogador> e : nPlantel.entrySet())
         {
-            plantel.put(e.getKey(),e.getValue().clone());
+            plantel.put(e.getKey(), e.getValue().clone());
         }
     }
 
@@ -110,18 +110,23 @@ public class Equipa
     }
     
     /**
-     * Método que permite inserir um objeto de tipo Jogador (passado como argumento) no plantel de um objeto da classe Equipa.
+     * Método que permite inserir um objeto de tipo Jogador (passado como argumento) e o seu novo número de equipamento (também passado como argumento) no plantel 
+     * de um objeto da classe Equipa.
      */
-    public void insereNoPlantel(Jogador umJogador)
+    public void insereNoPlantel(int numero, Jogador umJogador)
     {
-        
+        while ((this.getPlantel().containsKey(numero) == true) || (this.getBanco().containsKey(numero) == true)) numero += 1;
+        this.plantel.put(numero, umJogador.clone());
     }
     
     /**
-     * Método que permite inserir um objeto de tipo Jogador (passado como argumento) no plantel de um objeto da classe Equipa.
+     * Método que permite inserir um objeto de tipo Jogador (passado como argumento) e o seu novo número de equipamento (também passado como argumento) no banco 
+     * de um objeto da classe Equipa.
      */
-    public void insereNoBanco(Jogador umJogador)
+    public void insereNoBanco(int numero, Jogador umJogador)
     {
+        while ((this.getPlantel().containsKey(numero) == true) || (this.getBanco().containsKey(numero) == true)) numero += 1;
+        this.banco.put(numero, umJogador.clone());
     }
     
     /**
