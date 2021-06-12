@@ -215,8 +215,8 @@ public class Jogo
     public void toCSV(String fileName) throws FileNotFoundException {
         PrintWriter fich = new PrintWriter(fileName);
 
-        fich.println( equipa1.toString() + "\n");
-        fich.println( equipa2.toString());
+        fich.println(equipa1.toString() + "\n");
+        fich.println(equipa2.toString());
 
         fich.flush();
         fich.close();

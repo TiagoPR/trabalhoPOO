@@ -15,9 +15,10 @@ public class Defesa extends Jogador
     /**
      * Construtor parametrizado para objetos da classe Defesa.
      */
-    public Defesa(int valorVelocidade, int valorResistencia, int valorDestreza, int valorImpulsao, int valorJogoCabeca, int valorRemate, int valorCapacidadePasse, int valorMarcacao)
+    public Defesa(String umNome, int valorVelocidade, int valorResistencia, int valorDestreza, int valorImpulsao, int valorJogoCabeca, int valorRemate, int valorCapacidadePasse, 
+                  int valorMarcacao)
     {
-        super(valorVelocidade, valorResistencia, valorDestreza, valorImpulsao, valorJogoCabeca, valorRemate, valorCapacidadePasse);
+        super(umNome, valorVelocidade, valorResistencia, valorDestreza, valorImpulsao, valorJogoCabeca, valorRemate, valorCapacidadePasse);
         this.marcacao = valorMarcacao;
     }
 
@@ -52,8 +53,8 @@ public class Defesa extends Jogador
     public int calculaHabilidade()
     {
         double valor = this.getMarcacao() * 0.30 + this.getCapacidadePasse() * 0.10
-                + this.getDestreza() * 0.10 + this.getImpulsao() * 0.10 + this.getRemate() * 0.10
-                + this.getJogoCabeca() * 0.10 + this.getResistencia() * 0.10 + this.getVelocidade() * 0.10;
+                + this.getDestreza() * 0.10 + this.getImpulsao() * 0.10 + this.getRemate() * 0.05
+                + this.getJogoCabeca() * 0.15 + this.getResistencia() * 0.10 + this.getVelocidade() * 0.10;
 
         return (int) valor;
     }

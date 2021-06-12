@@ -1,6 +1,7 @@
 
 public abstract class Jogador
 {
+    private String nome;
     private int velocidade;
     private int resistencia;
     private int destreza;
@@ -14,6 +15,7 @@ public abstract class Jogador
      */
     public Jogador()
     {
+        this.nome = "";
         this.velocidade = 0;
         this.resistencia = 0;
         this.destreza = 0;
@@ -26,8 +28,9 @@ public abstract class Jogador
     /**
      * Construtor parametrizado não especializado para objetos do tipo Jogador.
      */
-    public Jogador(int valorVelocidade, int valorResistencia, int valorDestreza, int valorImpulsao, int valorJogoCabeca, int valorRemate, int valorCapacidadePasse)
+    public Jogador(String umNome, int valorVelocidade, int valorResistencia, int valorDestreza, int valorImpulsao, int valorJogoCabeca, int valorRemate, int valorCapacidadePasse)
     {
+        this.nome = umNome;
         this.velocidade = valorVelocidade;
         this.resistencia = valorResistencia;
         this.destreza = valorDestreza;
@@ -42,6 +45,7 @@ public abstract class Jogador
      */
     public Jogador(Jogador jogador)
     {
+        this.nome = jogador.getNome();
         this.velocidade = jogador.getVelocidade();
         this.resistencia = jogador.getResistencia();
         this.destreza = jogador.getDestreza();
@@ -49,6 +53,14 @@ public abstract class Jogador
         this.jogoCabeca = jogador.getJogoCabeca();
         this.remate = jogador.getRemate();
         this.capacidadePasse = jogador.getCapacidadePasse();
+    }
+    
+    /**
+     * Getter para a variável nome ("Nome") de objetos do tipo Jogador.
+     */
+    public String getNome()
+    {
+        return this.nome;
     }
     
     /**
@@ -105,6 +117,14 @@ public abstract class Jogador
     public int getCapacidadePasse()
     {
         return this.capacidadePasse;
+    }
+    
+    /**
+     * Setter para a variável nome ("Nome") de objetos do tipo Jogador.
+     */
+    public void setNome(String novoNome)
+    {
+        this.nome = novoNome;
     }
     
     /**
@@ -181,10 +201,12 @@ public abstract class Jogador
     {
         if (this == o) return true;
         if ((o == null) || (this.getClass() != o.getClass())) return false;
+        
         Jogador jogador = (Jogador) o;
-        return (this.getVelocidade() == jogador.getVelocidade() && this.getResistencia() == jogador.getResistencia() && this.getDestreza() == jogador.getDestreza() && 
-                this.getImpulsao() == jogador.getImpulsao() && this.getJogoCabeca() == jogador.getJogoCabeca() && this.getRemate() == jogador.getRemate() && 
-                this.getCapacidadePasse() == jogador.getCapacidadePasse());
+        
+        return (this.getNome() == jogador.getNome() && this.getVelocidade() == jogador.getVelocidade() && this.getResistencia() == jogador.getResistencia() && 
+                this.getDestreza() == jogador.getDestreza() && this.getImpulsao() == jogador.getImpulsao() && this.getJogoCabeca() == jogador.getJogoCabeca() && 
+                this.getRemate() == jogador.getRemate() && this.getCapacidadePasse() == jogador.getCapacidadePasse());
     }
     
     /**
@@ -194,6 +216,8 @@ public abstract class Jogador
     {
         StringBuilder sb = new StringBuilder();
         
+        sb.append("Nome: ");
+        sb.append(this.getNome() + "\n");
         sb.append("Velocidade: ");
         sb.append(this.getVelocidade() + "\n");
         sb.append("Resistência: ");

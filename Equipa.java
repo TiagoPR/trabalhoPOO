@@ -52,7 +52,7 @@ public class Equipa
     {
         Map<Integer,Jogador> ret = new HashMap<>();
 
-        for (Map.Entry<Integer,Jogador> e : plantel.entrySet())
+        for (Map.Entry<Integer,Jogador> e : this.plantel.entrySet())
         {
             ret.put(e.getKey(), e.getValue().clone());
         }
@@ -67,7 +67,7 @@ public class Equipa
     {
         Map<Integer,Jogador> ret = new HashMap<>();
 
-        for (Map.Entry<Integer,Jogador> e : banco.entrySet())
+        for (Map.Entry<Integer,Jogador> e : this.banco.entrySet())
         {
             ret.put(e.getKey(), e.getValue().clone());
         }
@@ -107,6 +107,21 @@ public class Equipa
         {
             banco.put(e.getKey(),e.getValue().clone());
         }
+    }
+    
+    /**
+     * Método que permite inserir um objeto de tipo Jogador (passado como argumento) no plantel de um objeto da classe Equipa.
+     */
+    public void insereNoPlantel(Jogador umJogador)
+    {
+        
+    }
+    
+    /**
+     * Método que permite inserir um objeto de tipo Jogador (passado como argumento) no plantel de um objeto da classe Equipa.
+     */
+    public void insereNoBanco(Jogador umJogador)
+    {
     }
     
     /**
@@ -171,14 +186,14 @@ public class Equipa
     {
         if (plantel.containsKey(principal) && banco.containsKey(substituto))
         {
-            Jogador prin = plantel.get(principal);
-            Jogador subs = banco.get(substituto);
+            Jogador prin = this.getPlantel().get(principal);
+            Jogador subs = this.getBanco().get(substituto);
 
-            plantel.remove(principal);
-            banco.put(principal,prin);
+            this.plantel.remove(principal);
+            this.banco.put(principal, prin);
 
-            plantel.put(substituto, subs);
-            banco.remove(substituto);
+            this.plantel.put(substituto, subs);
+            this.banco.remove(substituto);
         }
     }
 

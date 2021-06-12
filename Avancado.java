@@ -15,9 +15,10 @@ public class Avancado extends Jogador
     /**
      * Construtor parametrizado para objetos da classe Avancado.
      */
-    public Avancado(int valorVelocidade, int valorResistencia, int valorDestreza, int valorImpulsao, int valorJogoCabeca, int valorRemate, int valorCapacidadePasse, int valorDesmarcacao)
+    public Avancado(String umNome, int valorVelocidade, int valorResistencia, int valorDestreza, int valorImpulsao, int valorJogoCabeca, int valorRemate, int valorCapacidadePasse, 
+                    int valorDesmarcacao)
     {
-        super(valorVelocidade, valorResistencia, valorDestreza, valorImpulsao, valorJogoCabeca, valorRemate, valorCapacidadePasse);
+        super(umNome, valorVelocidade, valorResistencia, valorDestreza, valorImpulsao, valorJogoCabeca, valorRemate, valorCapacidadePasse);
         this.desmarcacao = valorDesmarcacao;
     }
     
@@ -51,8 +52,8 @@ public class Avancado extends Jogador
      */
     public int calculaHabilidade()
     {
-        double valor = this.getDesmarcacao() * 0.30 + this.getCapacidadePasse() * 0.10
-                + this.getDestreza() * 0.10 + this.getImpulsao() * 0.10 + this.getRemate() * 0.10
+        double valor = this.getDesmarcacao() * 0.30 + this.getCapacidadePasse() * 0.05
+                + this.getDestreza() * 0.10 + this.getImpulsao() * 0.10 + this.getRemate() * 0.15
                 + this.getJogoCabeca() * 0.10 + this.getResistencia() * 0.10 + this.getVelocidade() * 0.10;
 
         return (int) valor;

@@ -15,9 +15,10 @@ public class Lateral extends Jogador
     /**
      * Construtor parametrizado para objetos da classe Lateral.
      */
-    public Lateral(int valorVelocidade, int valorResistencia, int valorDestreza, int valorImpulsao, int valorJogoCabeca, int valorRemate, int valorCapacidadePasse, int valorCruzamento)
+    public Lateral(String umNome, int valorVelocidade, int valorResistencia, int valorDestreza, int valorImpulsao, int valorJogoCabeca, int valorRemate, int valorCapacidadePasse, 
+                   int valorCruzamento)
     {
-        super(valorVelocidade, valorResistencia, valorDestreza, valorImpulsao, valorJogoCabeca, valorRemate, valorCapacidadePasse);
+        super(umNome, valorVelocidade, valorResistencia, valorDestreza, valorImpulsao, valorJogoCabeca, valorRemate, valorCapacidadePasse);
         this.cruzamento = valorCruzamento;
     }
     
@@ -53,7 +54,7 @@ public class Lateral extends Jogador
     {
         double valor = this.getCruzamento() * 0.30 + this.getCapacidadePasse() * 0.10
                 + this.getDestreza() * 0.10 + this.getImpulsao() * 0.10 + this.getRemate() * 0.10
-                + this.getJogoCabeca() * 0.10 + this.getResistencia() * 0.10 + this.getVelocidade() * 0.10;
+                + this.getJogoCabeca() * 0.05 + this.getResistencia() * 0.10 + this.getVelocidade() * 0.15;
 
         return (int) valor;
     }
